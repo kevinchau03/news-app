@@ -1,51 +1,47 @@
-import { gql } from "graphql-request";
+// Define a function to fetch news data
+export async function fetchNews(category: Category): Promise<NewsResponse> {
+  const apiKey = process.env.NEWS_API_KEY; // Replace with your API key
+  const apiUrl = `https://newsapi.org/v2/top-headlines?country=US&category=${category}&apiKey=${apiKey}`;
 
-const fetchNews = async (
-    category?: Category | string, 
-    keywords?: string,
-    isDynamic?: boolean
-    ) => {
-    // Graph QL Query
-    const qeury = gql`
-        query MyQeury(
-            $access_key: String!
-            $categories: String!
-            $keywords: String
-        ) {
-            myQuery(
-             access_key: $access_key
-             categories: $categories
-             countries: "us"
-             sort: "published_desc"
-             keywords: $keywords
-             ) {
-                data {
-                    author
-                    category
-                    image
-                    description
-                    country
-                    language
-                    published_at
-                    source
-                    title
-                    url
-                }
-                pagination {
-                    count
-                    limit
-                    offset
-                    total
-                }
-        }
-    }`;
-    // Fetch function with Next.js 13
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch news data for category: ${category}`);
+    }
 
-    // Sort function by images
+    const data = await response.json();
+    return organizeNewsData(data);
+  } catch (error) {
+    throw error;
+  }
+}
 
-    // return res
+// Define a function to organize the fetched news data
+function organizeNewsData(apiData: any): NewsResponse {
+  // Parse and organize the API data into the NewsResponse structure
+  const newsResponse: NewsResponse = {
+    pagination: {
+      count: apiData.totalResults,
+      limit: apiData.articles.length,
+      offset: 0, // You can set an appropriate offset here
+      total: apiData.totalResults,
+    },
+    data: apiData.articles.map((article: any) => ({
+      author: article.author || null,
+      category: article.category,
+      country: 'us',
+      description: article.description,
+      image: article.urlToImage || null,
+      language: 'en',
+      published_at: article.publishedAt,
+      source: article.source.name,
+      title: article.title,
+      url: article.url,
+    })),
+  };
+
+  return newsResponse;
 }
 
 export default fetchNews;
 
-// http://api.mediastack.com/v1/news?access_key=3b60a13c2c9176b29ec63157a7e83c41&
