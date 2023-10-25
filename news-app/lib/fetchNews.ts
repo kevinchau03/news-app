@@ -1,5 +1,5 @@
 // Define a function to fetch news data
-export async function fetchNews(category: Category): Promise<NewsResponse> {
+export async function fetchNews(category: string | Category): Promise<NewsResponse> {
   const apiKey = process.env.NEWS_API_KEY; // Replace with your API key
   const apiUrl = `https://newsapi.org/v2/top-headlines?country=US&category=${category}&apiKey=${apiKey}`;
 
@@ -8,7 +8,6 @@ export async function fetchNews(category: Category): Promise<NewsResponse> {
     if (!response.ok) {
       throw new Error(`Failed to fetch news data for category: ${category}`);
     }
-
     const data = await response.json();
     return organizeNewsData(data);
   } catch (error) {
@@ -26,17 +25,27 @@ function organizeNewsData(apiData: any): NewsResponse {
       offset: 0, // You can set an appropriate offset here
       total: apiData.totalResults,
     },
-    data: apiData.articles.map((article: any) => ({
-      author: article.author || null,
-      category: article.category,
-      country: 'us',
-      description: article.description,
-      image: article.urlToImage || null,
-      language: 'en',
-      published_at: article.publishedAt,
-      source: article.source.name,
-      title: article.title,
-      url: article.url,
+    data: apiData.articles
+      .filter((article: any) => 
+        article.urlToImage && // Check if urlToImage is present and not falsy
+        article.urlToImage !== '[Removed]' && // Exclude articles with '[Removed]'
+        article.description !== '[Removed]' && article.description !== undefined &&
+        article.title !== '[Removed]' && article.title !== undefined &&
+        article.url !== '[Removed]' && article.url !== undefined &&
+        article.publishedAt !== '[Removed]' && article.publishedAt !== undefined &&
+        article.source.name !== '[Removed]' && article.source.name !== undefined
+      )
+      .map((article: any) => ({
+        author: article.author || null,
+        category: article.category,
+        country: 'us',
+        description: article.description,
+        image: article.urlToImage !== '[Removed]' ? article.urlToImage : null,
+        language: 'en',
+        published_at: article.publishedAt,
+        source: article.source.name,
+        title: article.title,
+        url: article.url !== '[Removed]' ? article.url : null,
     })),
   };
 
