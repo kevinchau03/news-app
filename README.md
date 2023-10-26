@@ -1,19 +1,9 @@
-# Next.js + Tailwind CSS Example
+# Welcome to my Live News Website
 
-Tailwind CSS is integrated into the `create-next-app` CLI, which supports TypeScript and JavaScript, as well as the App Router (`app/`) and the pages directory `pages/`.
+This is a simple website that provides users with live news based on different categories or search terms they want. 
 
-## How to use
+## What I used
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap a project preconfigured with Tailwind CSS:
+For this project, the technologies I used are Next.js, Tailwind CSS, and the NewsAPI api.
 
-```bash
-npx create-next-app --tailwind with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --tailwind with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --tailwind with-tailwindcss-app
-```
+### Feel free to fork and try to add your own features or improve upon this website
