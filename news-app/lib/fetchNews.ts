@@ -1,10 +1,13 @@
 // Define a function to fetch news data
-export async function fetchNews(category: string | Category): Promise<NewsResponse> {
+export async function fetchNews(category: string | Category, term?: string, isSearch?: boolean): Promise<NewsResponse> {
   const apiKey = process.env.NEWS_API_KEY; // Replace with your API key
-  const apiUrl = `https://newsapi.org/v2/top-headlines?country=US&category=${category}&apiKey=${apiKey}`;
-
+  const baseUrl = 'https://newsapi.org/v2';
+  let url = `${baseUrl}/top-headlines?country=us&category=${category}&apiKey=${apiKey}`;
+  if (isSearch && term) {
+    url = `${baseUrl}/everything?q=${term}&apiKey=${apiKey}`;
+  }
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Failed to fetch news data for category: ${category}`);
     }

@@ -9,9 +9,9 @@ function Header() {
             <div className="grid grid-cols-3 p-10 items-center">
                 <Bars3Icon className="h-8 w-8 cursor-pointer" />
                 <Link href='/' prefetch={false}>
-                    <h1 className="font-sans text-4xl text-center"> 
+                    <h1 className="font-bold text-6xl text-center"> 
                         <span className="underline decoration-6 decoration-blue-400">
-                            GOOD MORNING KEVIN
+                            THE DAILY PLANET
                         </span> 
                     </h1>
                 </Link>
