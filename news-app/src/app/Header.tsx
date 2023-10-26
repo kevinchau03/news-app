@@ -11,7 +11,7 @@ function Header() {
                 <Link href='/' prefetch={false}>
                     <h1 className="font-sans text-4xl text-center"> 
                         <span className="underline decoration-6 decoration-blue-400">
-                            UPLIFTED ECHOES
+                            KEVIN NEWS!
                         </span> 
                     </h1>
                 </Link>

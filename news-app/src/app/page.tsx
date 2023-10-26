@@ -1,12 +1,10 @@
 import { fetchNews } from "../../lib/fetchNews";
-import NewsArticle from "./NewsArticle"; // Import the NewsArticle component
 import NewsList from "./NewsList";
 
 
 async function Home() {
-  const category: Category = "Science";
+  const category: Category = "Sports";
   const news: NewsResponse = await fetchNews(category);
-  // Extract the first three articles
 
   return (
     <div>
