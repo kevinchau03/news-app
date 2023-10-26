@@ -6,7 +6,7 @@ interface NewsArticleProps {
   
   const NewsArticle: React.FC<NewsArticleProps> = ({ article }) => {
     return (
-        <article className="bg-gray-100 dark:bg-slate-800 flex flex-col rounded-lg shadow-sm hover:scale-105 hover:shadow-lg hover:bg-gray-400 transition-all duration-200 ease out">
+        <article className="bg-blue-50 dark:bg-slate-800 flex flex-col rounded-lg shadow-sm hover:scale-105 hover:shadow-lg hover:bg-blue-300 transition-all duration-200 ease out">
             {article.image && (
                 <img
                 src={article.image}

@@ -8,7 +8,7 @@ type Props = {
 
 async function NewsCategory({ params: { category } }: Props) {
     // In this case, you don't need to provide a search term or the topHeadlines flag.
-    const news: NewsResponse = await fetchNews(category, "", true);
+    const news: NewsResponse = await fetchNews(category, "", false);
     
     return (
         <div>
