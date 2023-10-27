@@ -31,7 +31,6 @@ function ArticlePage({ searchParams }: Props) {
                 <h2 className="font-bold pl-4">From: {article.source || 'Uknown'}</h2>
                 <p className="pl-4">{article.published_at}</p>
             </div>
-
             <p className="pt-4">{article.description}</p>
         </div>
       </section>
