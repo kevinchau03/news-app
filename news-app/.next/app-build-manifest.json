@@ -1,41 +1,25 @@
 {
   "pages": {
-    "/_not-found": [
-      "static/chunks/webpack-cd3a621863537bd9.js",
-      "static/chunks/fd9d1056-41e60764bd515a89.js",
-      "static/chunks/472-38a3b4339224f293.js",
-      "static/chunks/main-app-9b8ed31f8f27238f.js",
-      "static/chunks/app/_not-found-6cad3cc3357c45d3.js"
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
-      "static/chunks/webpack-cd3a621863537bd9.js",
-      "static/chunks/fd9d1056-41e60764bd515a89.js",
-      "static/chunks/472-38a3b4339224f293.js",
-      "static/chunks/main-app-9b8ed31f8f27238f.js",
-      "static/chunks/569-a5fb9345d50f9031.js",
-      "static/css/be8d92da32ef49ac.css",
-      "static/chunks/app/layout-15cca32ea43f9c0d.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
     "/news/[category]/page": [
-      "static/chunks/webpack-cd3a621863537bd9.js",
-      "static/chunks/fd9d1056-41e60764bd515a89.js",
-      "static/chunks/472-38a3b4339224f293.js",
-      "static/chunks/main-app-9b8ed31f8f27238f.js",
-      "static/chunks/app/news/[category]/page-1e9451a2257fc893.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/news/[category]/page.js"
     ],
-    "/search/page": [
-      "static/chunks/webpack-cd3a621863537bd9.js",
-      "static/chunks/fd9d1056-41e60764bd515a89.js",
-      "static/chunks/472-38a3b4339224f293.js",
-      "static/chunks/main-app-9b8ed31f8f27238f.js",
-      "static/chunks/app/search/page-7865719aad89cf97.js"
-    ],
-    "/page": [
-      "static/chunks/webpack-cd3a621863537bd9.js",
-      "static/chunks/fd9d1056-41e60764bd515a89.js",
-      "static/chunks/472-38a3b4339224f293.js",
-      "static/chunks/main-app-9b8ed31f8f27238f.js",
-      "static/chunks/app/page-ae5127481551dd63.js"
+    "/article/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/article/page.js"
     ]
   }
 }
