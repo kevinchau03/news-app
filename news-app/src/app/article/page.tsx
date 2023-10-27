@@ -5,13 +5,19 @@ type Props = {
 }
 
 function ArticlePage({ searchParams }: Props) {
-    if (
-        (searchParams && Object.entries(searchParams).length === 0) || !searchParams
-    ) {
-        return notFound();
-    }
 
-    const article: DataEntry = searchParams;
+  const article: DataEntry = searchParams ?? { 
+    title: "", 
+    author: "", 
+    source: "", 
+    description: "", 
+    url: "", 
+    image: "",
+    category: "",
+    country: "",
+    language: "",
+    published_at: ""
+  };
   return (
     <article className="pt-10">
       <section className="flex flex-col lg:flex-row pb-24 px-0 lg:px-10">
