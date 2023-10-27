@@ -7,7 +7,7 @@
     rounded-full p-4 cursor-pointer hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out;
   }
   .headerTitle {
-    @apply text-3xl px-10 pt-5 underline decoration-blue-400 decoration-2 underline-offset-8 dark:text-white;
+    @apply font-bold text-3xl px-10 pt-5 underline decoration-blue-400 decoration-2 underline-offset-8 dark:text-white;
   }
 }
 body {

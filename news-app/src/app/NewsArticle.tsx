@@ -18,9 +18,9 @@ interface NewsArticleProps {
             <div className="flex-1 flex flex-col p-5">
                 <h2 className="font-bold text-sm">{article.title}</h2>
                 <section className="mt-2 flex-1 ">
-                    <p className="text-xs line-clamp-4">{article.description}</p>
+                    <p className="text-xs line-clamp-2">{article.description}</p>
                 </section>
-                <footer className="py-3">
+                <footer className="pt-4">
                     <ReadMoreButton article={article}/>
                 </footer>
             </div>
