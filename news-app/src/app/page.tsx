@@ -7,7 +7,6 @@ type Props = {
 
 async function Home({ params: { category } }: Props) {
   const news: NewsResponse = await fetchNews("General", "", false);
-
   return (
     <div>
       <h1 className="headerTitle">General</h1>

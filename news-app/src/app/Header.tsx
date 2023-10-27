@@ -17,9 +17,6 @@ function Header() {
                     </h1>
                 </Link>
                 <div className="flex items-center justify-end space-x-2">
-                <button>
-                    <MoonIcon className="h-8 w-8 cursor-pointer" />
-                </button>
                 <a href="https://github.com/kevinchau03/news-app" target="_blank" className="hidden md:inline bg-slate-900 text-white px-4 lg:px-8 py-2 lg:py-4 rounded-full dark:bg-slate-800">
                     Github Repo
                 </a>

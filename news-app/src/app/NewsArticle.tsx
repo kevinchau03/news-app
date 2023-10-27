@@ -21,7 +21,7 @@ interface NewsArticleProps {
                     <p className="text-xs line-clamp-4">{article.description}</p>
                 </section>
                 <footer className="py-3">
-                    <ReadMoreButton />
+                    <ReadMoreButton article={article}/>
                 </footer>
             </div>
         </div>
