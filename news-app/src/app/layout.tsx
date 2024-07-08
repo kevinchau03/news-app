@@ -15,8 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
-      <script src="https://test.hitmeup.ai/widget.js/?rec=56&token=381259e4-3ca0-4c56-9948-3135423feb1b%27" async></script>
+      <head>
+      <script src="https://intent-anchovy-main.ngrok-free.app/widget.js/?rec=1&token=f56e3fc1-d943-4559-9731-10e0f186a1e6" async></script>
+      </head>
       <body className="bg-white dark:bg-zinc-900 dark:text-white transition-all duration-700">
         <Header />
         <div className="max-w-6xl mx-auto">
